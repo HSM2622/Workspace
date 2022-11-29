@@ -1,0 +1,11 @@
+https://bill1224.tistory.com/270
+
+여기 참고해서 만든 코드들입니다.
+
+vendor 폴더 뺀 거니 composer install 먼저 하세요
+
+sail artisan mirgrate 하시고요
+
+qna 더미데이터에 대한 팩토리 만들어놨으니
+
+필요하시면 sail artisan db:seed 해서 더미데이터 만들어서 보세요
