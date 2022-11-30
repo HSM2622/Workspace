@@ -9,3 +9,35 @@ sail artisan mirgrate 하시고요
 qna 더미데이터에 대한 팩토리 만들어놨으니
 
 필요하시면 sail artisan db:seed 해서 더미데이터 만들어서 보세요
+
+
++ 그 전에
+
+https://tailwindcss.com/docs/guides/laravel 내용 따라하세요.
+
+대충 요약하자면
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+실행하시고
+app.css 파일에  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+돼있는지 확인.
+
+sail composer require blade-ui-kit/blade-heroicons
+도 해야됩니다.
+
+여기까지 하셨으면 위에꺼 하세요.
+
+참고로 sail up 하시고
+npm run dev 도 해야합니다.
+제 경우를 말씀드리면
+유저 상태에서 sail up을 하고
+루트 상태에서 npm run dev를 해야 실행됐습니다.
+
+이 프로젝트 실행시켰을 때 퍼미션 어쩌고 log 문제 뜨면
+sudo chmod 777 -R taks2/bootstrap
+$ sudo chmod 777 -R taks2/storage 하세요
+
+이외의 에러 사항은 도움 드리기 힘들어요

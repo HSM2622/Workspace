@@ -17,7 +17,18 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('user_id');
-            $table->string('food');
+            $table->string('DESC_KOR');
+            $table->string('ANIMAL_PLANT');
+            $table->string('SERVING_WT');
+            $table->string('NUTR_CONT1');
+            $table->string('NUTR_CONT2');
+            $table->string('NUTR_CONT3');
+            $table->string('NUTR_CONT4');
+            $table->string('NUTR_CONT5');
+            $table->string('NUTR_CONT6');
+            $table->string('NUTR_CONT7');
+            $table->string('NUTR_CONT8');
+            $table->string('NUTR_CONT9');
         });
     }
 
@@ -28,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history');
+        Schema::dropIfExists('histories');
     }
 };

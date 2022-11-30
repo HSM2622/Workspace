@@ -26,23 +26,26 @@ Route::get('/info', function () {
 
 Route::get('/barcode', [UploadController::class, 'index']);
 Route::post('/upload', [UploadController::class, 'upload']);
-Route::get('/select', [FoodDBController::class, 'select']);
-Route::get('/save', [FoodDBController::class, 'save']);
+Route::post('/select', [FoodDBController::class, 'select']);
+Route::post('/save', [FoodDBController::class, 'save']);
 Route::post('/store', [QnaController::class, 'store']);
 Route::post('/delete', [QnaController::class, 'delete']);
+Route::post('/qna/comment', [QnaController::class, 'comment']);
+Route::post('/qna/comment/delete', [QnaController::class, 'commentDelete']);
+
 // https://gravis.tistory.com/entry/Laravel-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-FileUpload
 
-// Route::get('/barcode_qr_reader', 'App\Http\Controllers\UploadController@page');
-// Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\UploadController@upload')->name('image.upload');
+// Route::get('/barcode', 'App\Http\Controllers\UploadController@page');
+Route::post('/barcode/upload', 'App\Http\Controllers\UploadController@upload')->name('image.upload');
 
 Route::get('/dashboard', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/barcode', function () {
-    return view('barcode');
-});
+// Route::get('/barcode', function () {
+//     return view('barcode');
+// });
 
 Route::resource('qna', QnaController::class);
 Route::resource('barcode', FoodDBController::class);
