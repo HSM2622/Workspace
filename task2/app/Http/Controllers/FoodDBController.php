@@ -40,7 +40,7 @@ class FoodDBController extends Controller
             $xml = simplexml_load_string($api);
             $json = json_encode($xml); 
             $array = json_decode($json,TRUE);
-            if ($array['RESULT']["MSG"] != "해당하는 데이터가 없습니다."){
+            if ($array["RESULT"]["MSG"] != "해당하는 데이터가 없습니다."){
                 $result = $array['row']['PRDLST_NM'];
                 $api2 = Http::get("http://apis.data.go.kr/1471000/FoodNtrIrdntInfoService1/getFoodNtrItdntList1?serviceKey=${servicekey}&desc_kor=${result}&type=xml");
                 $xml2 = simplexml_load_string($api2);

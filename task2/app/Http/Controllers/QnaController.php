@@ -101,6 +101,6 @@ public function commentDelete(Request $request){
   $qna_id = $request -> qna_id;
   if ($commenter == Auth::user()->id)
   Comment::find($comment_id)->delete();
-  return redirect("/qna/${qna_id}")->with('alert', '삭제됨');;
+  return redirect("/qna/${qna_id}")->with('alert', '삭제됨');
 }
 }
